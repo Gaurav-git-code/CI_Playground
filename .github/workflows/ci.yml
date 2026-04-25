@@ -15,7 +15,14 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: setup maven
+      - name: cache maven dependency
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-key: |
+            ${{ runner.os }}-maven-
+      - name: run maven test
         run: mvn verify
       - name: list files and folder in current directory
         run: ls -la
