@@ -8,16 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: check what is installed
-        run: |
-          echo "Java version:"
-          java -version
-          echo "maven version:"
-          mvn -version
-          echo "Docker version:"
-          docker --version
-          echo "Node version:"
-          node --version
+      - name: check what is there in v3 version
+        uses: action/checkout@v3
       - name: check current directory
         run: pwd
       - name: list files and folder in current directory
