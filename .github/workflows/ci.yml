@@ -30,7 +30,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: run maven compile
-        run: mvn clean build
+        run: mvn compile
 
 
 
