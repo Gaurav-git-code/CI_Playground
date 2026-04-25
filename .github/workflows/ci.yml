@@ -1,0 +1,17 @@
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step one
+        run: echo "step one run"
+      - name: step two
+        run: echo "step two run"
+
+
+
