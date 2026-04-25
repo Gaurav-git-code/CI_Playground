@@ -10,8 +10,11 @@ jobs:
     steps:
       - name: check what is there in v3 version
         uses: actions/checkout@v3
-      - name: check current directory
-        run: pwd
+      - name: Setup java 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
       - name: list files and folder in current directory
         run: ls -la
 
