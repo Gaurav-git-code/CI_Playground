@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check what is there in v3 version
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
       - name: check current directory
         run: pwd
       - name: list files and folder in current directory
