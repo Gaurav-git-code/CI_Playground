@@ -8,10 +8,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: step one
-        run: echo "step one run"
-      - name: step two
-        run: echo "step two run"
+      - name: check what is installed
+        run: |
+          echo "Java version:"
+          java -version
+          echo "maven version:"
+          mvn -version
+          echo "Docker version:"
+          docker --version
+          echo "Node version:"
+          node --version
 
 
 
