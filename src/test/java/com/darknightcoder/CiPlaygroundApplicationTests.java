@@ -8,6 +8,7 @@ class CiPlaygroundApplicationTests {
 
 	@Test
 	void contextLoads() {
+        throw new RuntimeException("Intentional failure for CI verification");
 	}
 
 }
