@@ -20,7 +20,7 @@ jobs:
         with:
           path: ~/.m2
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-key: |
+          restore-keys: |
             ${{ runner.os }}-maven-
       - name: run maven test
         run: mvn verify
