@@ -15,6 +15,16 @@ jobs:
         run: |
           echo "My application name is -> $APP_NAME"
           echo "My branch name -> $BRANCH_NAME"
+      - name: set dev secret
+        if: github.ref_name == 'development'
+        env:
+          DB_PASSWORD: ${{secrets.DEV_DB_PASSWORD}}
+        run: echo "using dev database"
+      - name: set prod secret
+        if: github.ref_name == 'main'
+        env:
+          DB_PASSWORD: ${{secrets.PROD_DB_PASSWORD}}
+        run: echo "using prod database"
       - name: check out version v3 for configuration
         uses: actions/checkout@v3
       - name: Setup java 17
