@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: environment variable declaration
         env:
-         APP_NAME: CI_PLAYGROUND
-         BRANCH_NAME: DEVELOPMENT
+         APP_NAME: ${{secrets.MY_APP_NAME}}
+         BRANCH_NAME: ${{secrets.MY_BRANCH_NAME}}
         run: |
           echo "My application name is -> $APP_NAME"
           echo "My branch name -> $BRANCH_NAME"
