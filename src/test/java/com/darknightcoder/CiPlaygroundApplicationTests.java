@@ -8,6 +8,7 @@ class CiPlaygroundApplicationTests {
 
 	@Test
 	void contextLoads() {
+        throw new RuntimeException("throw error");
 	}
 
 }
